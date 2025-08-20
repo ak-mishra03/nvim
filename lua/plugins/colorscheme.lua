@@ -1,3 +1,5 @@
+-- lua/plugins/colorscheme.lua
+
 require("catppuccin").setup({
   flavour = "mocha",
   transparent_background = true,

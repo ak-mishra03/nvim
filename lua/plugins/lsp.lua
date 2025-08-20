@@ -1,3 +1,5 @@
+-- lua/plugins/lsp.lua
+
 -- Mason setup
 require("mason").setup()
 
