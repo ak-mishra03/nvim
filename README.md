@@ -147,6 +147,7 @@ To tweak options:
 ---
 
 ## 📸 Screenshot
+![Neovim Setup Screenshot](assets/ss.jpg)
 
 ---
 
