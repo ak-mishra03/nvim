@@ -34,7 +34,7 @@ require("lazy").setup({
     { "numToStr/Comment.nvim" },
     { "goolord/alpha-nvim", dependencies = { "nvim-tree/nvim-web-devicons" } },
 
-    -- 📌 LSP & Autocompletion
+    -- LSP & Autocompletion
     { "neovim/nvim-lspconfig" },       -- LSP client configs
     { "williamboman/mason.nvim" },     -- LSP/DAP/Linter installer
     { "williamboman/mason-lspconfig.nvim" }, -- Connect mason with lspconfig

@@ -146,9 +146,7 @@ To tweak options:
 
 ---
 
-## 📸 Screenshot (Optional)
-
-*(You could add a screenshot of your Neovim here!)*
+## 📸 Screenshot
 
 ---
 
