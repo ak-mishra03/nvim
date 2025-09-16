@@ -45,8 +45,15 @@ require("lazy").setup({
     { "hrsh7th/cmp-cmdline" },         -- cmdline completions
     { "L3MON4D3/LuaSnip" },            -- snippet engine
     { "saadparwaiz1/cmp_luasnip" },    -- integrate luasnip with cmp
-    { "rafamadriz/friendly-snippets" } -- a bunch of pre-made snippets
+    { "rafamadriz/friendly-snippets" }, -- a bunch of pre-made snippets
+
+    --Presence for Discord
+    {
+      'andweeb/presence.nvim'
+    }
+
   },
+
 
   install = { colorscheme = { "catppuccin", "habamax" } },
   checker = { enabled = true },
@@ -63,4 +70,4 @@ require("plugins.alpha")
 require("plugins.autoclose")
 require("plugins.comment")
 require("plugins.cmp")
-
+require("plugins.presence")
