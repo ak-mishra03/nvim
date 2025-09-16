@@ -27,7 +27,7 @@ require("lazy").setup({
     { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
 
     -- Fuzzy finder
-    { "nvim-telescope/telescope.nvim", tag = "0.1.8" },
+    require("plugins.telescope"),
 
     -- Misc
     { "m4xshen/autoclose.nvim" },
@@ -35,30 +35,25 @@ require("lazy").setup({
     { "goolord/alpha-nvim", dependencies = { "nvim-tree/nvim-web-devicons" } },
 
     -- LSP & Autocompletion
-    { "neovim/nvim-lspconfig" },       -- LSP client configs
-    { "williamboman/mason.nvim" },     -- LSP/DAP/Linter installer
-    { "williamboman/mason-lspconfig.nvim" }, -- Connect mason with lspconfig
-    { "hrsh7th/nvim-cmp" },            -- Autocompletion engine
-    { "hrsh7th/cmp-nvim-lsp" },        -- LSP completions
-    { "hrsh7th/cmp-buffer" },          -- buffer words
-    { "hrsh7th/cmp-path" },            -- filesystem paths
-    { "hrsh7th/cmp-cmdline" },         -- cmdline completions
-    { "L3MON4D3/LuaSnip" },            -- snippet engine
-    { "saadparwaiz1/cmp_luasnip" },    -- integrate luasnip with cmp
-    { "rafamadriz/friendly-snippets" }, -- a bunch of pre-made snippets
+    { "neovim/nvim-lspconfig" },
+    { "williamboman/mason.nvim" },
+    { "williamboman/mason-lspconfig.nvim" },
+    { "hrsh7th/nvim-cmp" },
+    { "hrsh7th/cmp-nvim-lsp" },
+    { "hrsh7th/cmp-buffer" },
+    { "hrsh7th/cmp-path" },
+    { "hrsh7th/cmp-cmdline" },
+    { "L3MON4D3/LuaSnip" },
+    { "saadparwaiz1/cmp_luasnip" },
+    { "rafamadriz/friendly-snippets" },
 
-    --Presence for Discord
-    {
-      'andweeb/presence.nvim'
-    }
-
+    -- Presence
+    { "andweeb/presence.nvim" },
   },
-
 
   install = { colorscheme = { "catppuccin", "habamax" } },
   checker = { enabled = true },
 })
-
 -----------------------------------------------------------
 -- Load plugin configs
 -----------------------------------------------------------
