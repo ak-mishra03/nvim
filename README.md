@@ -8,18 +8,19 @@ It includes **LSP, snippets, fuzzy finding, syntax highlighting, and a polished 
 
 ## 🚀 Features
 
-- 📦 **Plugin Management** via [lazy.nvim](https://github.com/folke/lazy.nvim)
-- 🎨 **Catppuccin Mocha** colorscheme with transparent background
-- 🗂️ **Neo-tree** for file & buffer navigation
-- 🔍 **Telescope** for fuzzy finding files, grep, and buffers
-- 🌳 **Treesitter** for modern syntax highlighting
-- 💻 **LSP setup** with [mason.nvim](https://github.com/williamboman/mason.nvim)  
+- **Plugin Management** via [lazy.nvim](https://github.com/folke/lazy.nvim)
+- **Catppuccin Mocha** colorscheme with transparent background
+- **Neo-tree** for file & buffer navigation
+- **Telescope** for fuzzy finding files, grep, and buffers
+- **Treesitter** for modern syntax highlighting
+- **LSP setup** with [mason.nvim](https://github.com/williamboman/mason.nvim)  
   - Lua, Python, Java, C/C++ pre-configured
-- ⚡ **nvim-cmp** for autocompletion (LSP + buffer + path + snippets)
-- ✍️ **LuaSnip + friendly-snippets** for snippet expansion
-- 💬 **Comment.nvim** for easy commenting
-- 🔒 **Autoclose.nvim** for auto-closing brackets & quotes
-- 🎉 **Alpha-nvim** dashboard with ASCII art
+- **nvim-cmp** for autocompletion (LSP + buffer + path + snippets)
+- **LuaSnip + friendly-snippets** for snippet expansion
+- **Comment.nvim** for easy commenting
+- **Autoclose.nvim** for auto-closing brackets & quotes
+- **Alpha-nvim** dashboard with ASCII art
+- **presence.nvim** discord rich presence for neovim
 
 ---
 
