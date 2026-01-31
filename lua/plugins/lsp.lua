@@ -1,31 +1,28 @@
 -- lua/plugins/lsp.lua
 
+-- Mason
 require("mason").setup()
 
 require("mason-lspconfig").setup({
   ensure_installed = {
     "lua_ls",
     "pyright",
-    "ruff_lsp",
-
-    "tsserver",
+    "ruff",
+    "ts_ls",
     "eslint",
     "html",
     "cssls",
     "tailwindcss",
-
     "jsonls",
     "yamlls",
     "bashls",
-
     "clangd",
     "jdtls",
   },
   automatic_installation = true,
 })
 
-local lspconfig = require("lspconfig")
-
+-- Keymaps
 local on_attach = function(_, bufnr)
   local opts = { noremap = true, silent = true, buffer = bufnr }
   local keymap = vim.keymap.set
@@ -43,39 +40,37 @@ end
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
--- Servers WITHOUT special config
+-- API (vim.lsp.config)
 local servers = {
-  "pyright",
-  "ruff_lsp",
-  "tsserver",
-  "eslint",
-  "html",
-  "cssls",
-  "tailwindcss",
-  "jsonls",
-  "yamlls",
-  "bashls",
-  "clangd",
-  "jdtls",
+  pyright = {},
+  ruff = {},
+  ts_ls = {},
+  eslint = {},
+  html = {},
+  cssls = {},
+  tailwindcss = {},
+  jsonls = {},
+  yamlls = {},
+  bashls = {},
+  clangd = {},
+  jdtls = {},
 }
 
-for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup({
+for name, config in pairs(servers) do
+  vim.lsp.config(name, vim.tbl_extend("force", {
     on_attach = on_attach,
     capabilities = capabilities,
-  })
+  }, config))
 end
 
 -- Special Lua config
-lspconfig.lua_ls.setup({
+vim.lsp.config("lua_ls", {
   on_attach = on_attach,
   capabilities = capabilities,
   settings = {
     Lua = {
       diagnostics = { globals = { "vim" } },
-      workspace = {
-        checkThirdParty = false,
-      },
+      workspace = { checkThirdParty = false },
     },
   },
 })
