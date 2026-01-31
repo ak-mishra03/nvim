@@ -1,23 +1,31 @@
 -- lua/plugins/lsp.lua
 
--- Mason setup
 require("mason").setup()
 
--- Bridge mason with lspconfig
 require("mason-lspconfig").setup({
   ensure_installed = {
-    "lua_ls",     -- Lua
-    "pyright",    -- Python
-    "jdtls",      -- Java
-    "clangd",     -- C / C++
+    "lua_ls",
+    "pyright",
+    "ruff_lsp",
+
+    "tsserver",
+    "eslint",
+    "html",
+    "cssls",
+    "tailwindcss",
+
+    "jsonls",
+    "yamlls",
+    "bashls",
+
+    "clangd",
+    "jdtls",
   },
   automatic_installation = true,
 })
 
--- nvim-lspconfig
 local lspconfig = require("lspconfig")
 
--- Function for keymaps + capabilities
 local on_attach = function(_, bufnr)
   local opts = { noremap = true, silent = true, buffer = bufnr }
   local keymap = vim.keymap.set
@@ -28,14 +36,29 @@ local on_attach = function(_, bufnr)
   keymap("n", "<leader>rn", vim.lsp.buf.rename, opts)
   keymap("n", "<leader>ca", vim.lsp.buf.code_action, opts)
   keymap("n", "gr", vim.lsp.buf.references, opts)
-  keymap("n", "<leader>f", function() vim.lsp.buf.format { async = true } end, opts)
+  keymap("n", "<leader>f", function()
+    vim.lsp.buf.format({ async = true })
+  end, opts)
 end
 
--- Capabilities for autocompletion
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
--- Setup servers
-local servers = { "lua_ls", "pyright", "jdtls", "clangd" }
+-- Servers WITHOUT special config
+local servers = {
+  "pyright",
+  "ruff_lsp",
+  "tsserver",
+  "eslint",
+  "html",
+  "cssls",
+  "tailwindcss",
+  "jsonls",
+  "yamlls",
+  "bashls",
+  "clangd",
+  "jdtls",
+}
+
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup({
     on_attach = on_attach,
@@ -43,13 +66,16 @@ for _, lsp in ipairs(servers) do
   })
 end
 
--- Special Lua config (so nvim config files don’t error)
+-- Special Lua config
 lspconfig.lua_ls.setup({
   on_attach = on_attach,
   capabilities = capabilities,
   settings = {
     Lua = {
       diagnostics = { globals = { "vim" } },
+      workspace = {
+        checkThirdParty = false,
+      },
     },
   },
 })
