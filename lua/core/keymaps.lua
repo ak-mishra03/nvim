@@ -6,6 +6,8 @@ local opts = { noremap = true, silent = true }
 -- Neo-tree
 map("n", "<C-n>", ":Neotree filesystem reveal left<CR>", opts)
 map("n", "<leader>bf", ":Neotree buffers reveal float<CR>", opts)
+map("n", "<leader>e", vim.diagnostic.open_float, opts)
+
 
 -- -- Telescope
 -- local ok, builtin = pcall(require, "telescope.builtin")

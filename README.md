@@ -76,6 +76,7 @@ Configured in `lua/core/keymaps.lua`:
 - `<leader>ca` → Code action
 - `gr` → References
 - `<leader>f` → Format buffer
+- `<leader>e` → Check error/hint details
 
 ### ✨ Autocompletion
 - `<C-Space>` → Trigger completion menu

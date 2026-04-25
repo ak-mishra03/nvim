@@ -1,7 +1,7 @@
 -- lua/plugins/treesitter.lua
 
-require("nvim-treesitter.configs").setup({
-  ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline", "python", "java", "cpp" },
+require("nvim-treesitter.config").setup({
+  ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline", "python", "java", "cpp", "javascript", "typescript","tsx" },
   auto_install = true,
   highlight = {
     enable = true,
